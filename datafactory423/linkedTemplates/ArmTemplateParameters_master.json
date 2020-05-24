@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactory423"
+		},
+		"datalakeconnection_servicePrincipalKey": {
+			"value": ""
+		},
+		"datalakegen2_accountKey": {
+			"value": ""
+		},
+		"sqlconnection_connectionString": {
+			"value": ""
+		},
+		"sqldwconnection_connectionString": {
+			"value": ""
+		},
+		"datalakeconnection_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://datalake423.azuredatalakestore.net/webhdfs/v1"
+		},
+		"datalakeconnection_properties_typeProperties_servicePrincipalId": {
+			"value": "9e2efa1f-63e1-4773-9890-89d038fc3671"
+		},
+		"datalakeconnection_properties_typeProperties_tenant": {
+			"value": "c3f53de0-a7ee-4f9d-b783-fe4fb236020a"
+		},
+		"datalakeconnection_properties_typeProperties_subscriptionId": {
+			"value": "e523a36d-130b-4772-9efb-ef365b8b0244"
+		},
+		"datalakeconnection_properties_typeProperties_resourceGroupName": {
+			"value": "sqldbresource"
+		},
+		"datalakegen2_properties_typeProperties_url": {
+			"value": "https://storage2423.dfs.core.windows.net"
+		},
+		"keyvalutconnection_properties_typeProperties_baseUrl": {
+			"value": "https://trainingkeyvalut1.vault.azure.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

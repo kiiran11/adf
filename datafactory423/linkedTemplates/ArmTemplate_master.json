@@ -1,0 +1,119 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "datafactory423"
+		},
+		"datalakeconnection_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'datalakeconnection'"
+		},
+		"datalakegen2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'datalakegen2'"
+		},
+		"sqlconnection_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'sqlconnection'"
+		},
+		"sqldwconnection_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'sqldwconnection'"
+		},
+		"datalakeconnection_properties_typeProperties_dataLakeStoreUri": {
+			"type": "string",
+			"defaultValue": "https://datalake423.azuredatalakestore.net/webhdfs/v1"
+		},
+		"datalakeconnection_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "9e2efa1f-63e1-4773-9890-89d038fc3671"
+		},
+		"datalakeconnection_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "c3f53de0-a7ee-4f9d-b783-fe4fb236020a"
+		},
+		"datalakeconnection_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "e523a36d-130b-4772-9efb-ef365b8b0244"
+		},
+		"datalakeconnection_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "sqldbresource"
+		},
+		"datalakegen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storage2423.dfs.core.windows.net"
+		},
+		"keyvalutconnection_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://trainingkeyvalut1.vault.azure.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"datalakeconnection_servicePrincipalKey": {
+						"value": "[parameters('datalakeconnection_servicePrincipalKey')]"
+					},
+					"datalakegen2_accountKey": {
+						"value": "[parameters('datalakegen2_accountKey')]"
+					},
+					"sqldwconnection_connectionString": {
+						"value": "[parameters('sqldwconnection_connectionString')]"
+					},
+					"sqlconnection_connectionString": {
+						"value": "[parameters('sqlconnection_connectionString')]"
+					},
+					"datalakeconnection_properties_typeProperties_dataLakeStoreUri": {
+						"value": "[parameters('datalakeconnection_properties_typeProperties_dataLakeStoreUri')]"
+					},
+					"datalakeconnection_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('datalakeconnection_properties_typeProperties_servicePrincipalId')]"
+					},
+					"datalakeconnection_properties_typeProperties_tenant": {
+						"value": "[parameters('datalakeconnection_properties_typeProperties_tenant')]"
+					},
+					"datalakeconnection_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('datalakeconnection_properties_typeProperties_subscriptionId')]"
+					},
+					"datalakeconnection_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('datalakeconnection_properties_typeProperties_resourceGroupName')]"
+					},
+					"datalakegen2_properties_typeProperties_url": {
+						"value": "[parameters('datalakegen2_properties_typeProperties_url')]"
+					},
+					"keyvalutconnection_properties_typeProperties_baseUrl": {
+						"value": "[parameters('keyvalutconnection_properties_typeProperties_baseUrl')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
