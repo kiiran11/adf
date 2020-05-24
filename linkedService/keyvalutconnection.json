@@ -1,0 +1,11 @@
+{
+	"name": "keyvalutconnection",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://trainingkeyvalut1.vault.azure.net/"
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"name": "datalakeconnection",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDataLakeStore",
+		"typeProperties": {
+			"dataLakeStoreUri": "https://datalake423.azuredatalakestore.net/webhdfs/v1",
+			"servicePrincipalId": "9e2efa1f-63e1-4773-9890-89d038fc3671",
+			"tenant": "c3f53de0-a7ee-4f9d-b783-fe4fb236020a",
+			"subscriptionId": "e523a36d-130b-4772-9efb-ef365b8b0244",
+			"resourceGroupName": "sqldbresource",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZNDIzX2VhMjQyYmFhLWY2ZjItNDU2Mi1hYjRjLTNlNjVjMDBkYzY1NSINCn0="
+		}
+	}
+}

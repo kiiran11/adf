@@ -1,0 +1,19 @@
+{
+	"name": "sqlconnection",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=sampleserver423.database.windows.net;Initial Catalog=sqldb423;User ID=perreddy",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "keyvalutconnection",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sqlpass"
+			}
+		}
+	}
+}
